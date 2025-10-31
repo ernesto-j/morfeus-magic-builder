@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Code2, Terminal, Globe, Github, GitBranch, ListChecks, FileText } from "lucide-react";
+import { useTypewriter } from "@/hooks/use-typewriter";
 
 const platforms = [
   {
@@ -61,13 +62,20 @@ const integrations = [
 ];
 
 const PlatformSection = () => {
+  const { displayText, isTyping } = useTypewriter({
+    phrases: ["Three Interfaces", "Three Ways", "Three Platforms"],
+    typingSpeed: 80,
+    deletingSpeed: 50,
+    pauseDuration: 1500,
+  });
+
   return (
     <section className="relative py-24 px-4">
       <div className="max-w-7xl mx-auto space-y-16">
         {/* Section header */}
         <div className="text-center space-y-4 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold">
-            One Framework, <span className="text-gradient">Three Interfaces</span>
+            One Framework, <span className="text-gradient inline-block">{displayText}<span className={`${isTyping ? 'animate-pulse' : 'opacity-0'}`}>_</span></span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Access Morfeus however you work best—from your IDE, terminal, or browser
