@@ -95,7 +95,11 @@ const OfferingsSection = () => {
                     ))}
                   </ul>
                   
-                  <Button variant="outline" className="w-full group">
+                  <Button 
+                    variant="outline" 
+                    className="w-full group"
+                    onClick={() => window.open('https://ernst-3kn785vq.scoreapp.com/', '_blank')}
+                  >
                     Learn More
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
