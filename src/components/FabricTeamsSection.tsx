@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Sparkles, RefreshCw, GitBranch, Database, Workflow, Brain, BarChart3, Layers, Code2, Boxes, Cloud, TestTube, Palette, Rocket, FileCode, Zap } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useTypewriter } from "@/hooks/use-typewriter";
 
 // Data Teams Configuration
 const dataTeamCenter = {
@@ -158,12 +159,35 @@ const contextEngineeringTeams = [
 
 const FabricTeamsSection = () => {
   const [selectedTeam, setSelectedTeam] = useState<"data" | "context">("data");
+  const [titleKey, setTitleKey] = useState(0);
 
   const isDataTeam = selectedTeam === "data";
   const centerRole = isDataTeam ? dataTeamCenter : contextEngineeringCenter;
   const teamMembers = isDataTeam ? dataTeamMembers : contextEngineeringMembers;
   const teams = isDataTeam ? fabricTeams : contextEngineeringTeams;
   const accentColor = isDataTeam ? "primary" : "purple-500";
+
+  const { displayText: titleText, isTyping: titleTyping } = useTypewriter({
+    phrases: [isDataTeam ? "Data Teams" : "App Development Team"],
+    typingSpeed: 80,
+    deletingSpeed: 0,
+    pauseDuration: 999999,
+  });
+
+  const { displayText: subtitleText, isTyping: subtitleTyping } = useTypewriter({
+    phrases: [
+      isDataTeam
+        ? "Customisable Data AI teams for every phase of your architecture"
+        : "Build modern apps fast with AI developers who actually know their stuff"
+    ],
+    typingSpeed: 30,
+    deletingSpeed: 0,
+    pauseDuration: 999999,
+  });
+
+  useEffect(() => {
+    setTitleKey((prev) => prev + 1);
+  }, [selectedTeam]);
 
   return (
     <section className="relative py-24 px-4 bg-card/30">
@@ -194,16 +218,14 @@ const FabricTeamsSection = () => {
             </button>
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-bold">
+          <h2 className="text-4xl md:text-5xl font-bold" key={`title-${titleKey}`}>
             {isDataTeam ? "Specialized " : ""}
             <span className={isDataTeam ? "text-primary" : "text-purple-400"}>
-              {isDataTeam ? "Data Teams" : "App Development Team"}
+              {titleText}<span className={`${titleTyping ? 'animate-pulse' : 'opacity-0'}`}>_</span>
             </span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            {isDataTeam
-              ? "Customisable Data AI teams for every phase of your architecture"
-              : "Build modern apps fast with AI developers who actually know their stuff"}
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto" key={`subtitle-${titleKey}`}>
+            {subtitleText}<span className={`${subtitleTyping ? 'animate-pulse' : 'opacity-0'}`}>_</span>
           </p>
         </div>
 

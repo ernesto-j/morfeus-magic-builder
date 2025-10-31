@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Briefcase, Zap, GraduationCap, ArrowRight } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useTypewriter } from "@/hooks/use-typewriter";
 
 const offerings = [
   {
@@ -43,15 +43,14 @@ const offerings = [
 ];
 
 const OfferingsSection = () => {
-  const [currentWord, setCurrentWord] = useState(0);
-  const words = ["Path", "Team", "Framework"];
+  const { displayText, isTyping, phraseIndex } = useTypewriter({
+    phrases: ["Path", "Team", "Framework"],
+    typingSpeed: 100,
+    deletingSpeed: 50,
+    pauseDuration: 1500,
+  });
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentWord((prev) => (prev + 1) % words.length);
-    }, 2000);
-    return () => clearInterval(interval);
-  }, []);
+  const actionWords = ["Choose", "Expand", "Build"];
 
   return (
     <section className="relative py-24 px-4">
@@ -59,7 +58,7 @@ const OfferingsSection = () => {
         {/* Section header */}
         <div className="text-center space-y-4 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold">
-            {currentWord === 0 ? "Choose" : currentWord === 1 ? "Expand" : "Build"} Your <span key={currentWord} className="text-gradient animate-fade-in inline-block">{words[currentWord]}</span>
+            {actionWords[phraseIndex]} Your <span className="text-gradient inline-block">{displayText}<span className={`${isTyping ? 'animate-pulse' : 'opacity-0'}`}>_</span></span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Join the revolution. The machines aren't taking over—they're working for you. Pick your reality.
