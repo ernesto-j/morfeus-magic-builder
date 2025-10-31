@@ -1,5 +1,39 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Sparkles, RefreshCw, GitBranch } from "lucide-react";
+import { Sparkles, RefreshCw, GitBranch, Database, Workflow, Brain, BarChart3, Layers } from "lucide-react";
+
+const centerRole = {
+  icon: Database,
+  title: "Data Architect",
+  description: "System design & strategy",
+};
+
+const teamMembers = [
+  {
+    icon: Workflow,
+    title: "Data Engineer",
+    description: "Pipeline development",
+  },
+  {
+    icon: Layers,
+    title: "Analytics Engineer",
+    description: "Data modeling",
+  },
+  {
+    icon: Brain,
+    title: "Data Scientist",
+    description: "ML & AI solutions",
+  },
+  {
+    icon: BarChart3,
+    title: "BI Developer",
+    description: "Visualization & reporting",
+  },
+  {
+    icon: Sparkles,
+    title: "ML Engineer",
+    description: "Model deployment",
+  },
+];
 
 const fabricTeams = [
   {
@@ -60,8 +94,76 @@ const FabricTeamsSection = () => {
           </p>
         </div>
 
+        {/* Spider Diagram */}
+        <div className="relative flex items-center justify-center min-h-[600px] my-16">
+          {/* Concentric circles */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="absolute w-[300px] h-[300px] rounded-full border border-primary/20" />
+            <div className="absolute w-[450px] h-[450px] rounded-full border border-primary/10" />
+          </div>
+
+          {/* Center - Data Architect */}
+          <div className="relative z-10">
+            <Card className="w-40 h-40 flex items-center justify-center bg-primary/10 border-primary/50 backdrop-blur-sm shadow-xl shadow-primary/20">
+              <CardHeader className="p-4 text-center space-y-2">
+                <div className="w-12 h-12 mx-auto rounded-full bg-primary/20 border border-primary flex items-center justify-center">
+                  <Database className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <CardTitle className="text-sm">{centerRole.title}</CardTitle>
+                  <p className="text-xs text-muted-foreground">{centerRole.description}</p>
+                </div>
+              </CardHeader>
+            </Card>
+          </div>
+
+          {/* Outer team members in circular layout */}
+          {teamMembers.map((member, index) => {
+            const Icon = member.icon;
+            const angle = (index * 360) / teamMembers.length;
+            const radius = 225; // Distance from center
+            const x = radius * Math.cos((angle - 90) * (Math.PI / 180));
+            const y = radius * Math.sin((angle - 90) * (Math.PI / 180));
+
+            return (
+              <div
+                key={member.title}
+                className="absolute z-10 animate-fade-in"
+                style={{
+                  left: '50%',
+                  top: '50%',
+                  transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`,
+                  animationDelay: `${index * 150}ms`
+                }}
+              >
+                {/* Connection line to center */}
+                <div
+                  className="absolute left-1/2 top-1/2 origin-center border-t border-primary/20"
+                  style={{
+                    width: `${radius}px`,
+                    transform: `translate(-100%, -50%) rotate(${angle - 90}deg)`,
+                    transformOrigin: 'right center'
+                  }}
+                />
+                
+                <Card className="w-32 h-32 flex items-center justify-center bg-card/80 backdrop-blur-sm hover:bg-card hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300">
+                  <CardHeader className="p-3 text-center space-y-2">
+                    <div className="w-10 h-10 mx-auto rounded-lg bg-card border border-border flex items-center justify-center">
+                      <Icon className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <CardTitle className="text-xs">{member.title}</CardTitle>
+                      <p className="text-[10px] text-muted-foreground">{member.description}</p>
+                    </div>
+                  </CardHeader>
+                </Card>
+              </div>
+            );
+          })}
+        </div>
+
         {/* Teams grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-16">
           {fabricTeams.map((team, index) => {
             const Icon = team.icon;
             return (
