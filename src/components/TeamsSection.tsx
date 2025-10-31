@@ -44,7 +44,7 @@ const teams = [
 const TeamsSection = () => {
   const [currentPhrase, setCurrentPhrase] = useState(0);
   const phrases = [
-    "Morfeus Autonomous Team",
+    "Autonomous Team",
     "AI Squad",
     "Agentic Army"
   ];
@@ -61,7 +61,7 @@ const TeamsSection = () => {
       <div className="max-w-6xl mx-auto space-y-12">
         <div className="text-center space-y-4 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold">
-            Your <span key={currentPhrase} className="text-primary animate-fade-in inline-block">{phrases[currentPhrase]}</span>
+            Your <span className="text-accent">Morfeus</span> <span key={currentPhrase} className="text-primary animate-fade-in inline-block">{phrases[currentPhrase]}</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Pre-configured Agentic teams specialised in AI architecture, App Development, Data & Analytics.
