@@ -61,7 +61,7 @@ const OfferingsSection = () => {
             {actionWords[phraseIndex]} Your <span className="text-gradient inline-block">{displayText}<span className={`${isTyping ? 'animate-pulse' : 'opacity-0'}`}>_</span></span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Join the revolution. The machines aren't taking over—they're working for you. Pick your reality.
+            Join the revolution. The machines aren't taking over—they're working for you. Choose your reality.
           </p>
         </div>
 
