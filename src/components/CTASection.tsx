@@ -1,8 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
-import { useState } from "react";
-import { toast } from "sonner";
 
 const benefits = [
   "Early access to all platform features",
@@ -12,16 +9,6 @@ const benefits = [
 ];
 
 const CTASection = () => {
-  const [email, setEmail] = useState("");
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email) {
-      toast.success("You're on the list! Check your email for next steps.");
-      setEmail("");
-    }
-  };
-
   return (
     <section className="relative py-24 px-4 overflow-hidden">
       {/* Background gradient */}
@@ -54,26 +41,18 @@ const CTASection = () => {
             ))}
           </div>
 
-          {/* Form */}
-          <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-4">
-            <div className="flex flex-col sm:flex-row gap-3">
-              <Input
-                type="email"
-                placeholder="your@email.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="flex-1 bg-background border-border"
-              />
-              <Button type="submit" variant="hero" size="lg" className="sm:w-auto">
-                Join Waitlist
-                <ArrowRight className="w-4 h-4" />
-              </Button>
-            </div>
-            <p className="text-xs text-center text-muted-foreground">
-              No spam, ever. Unsubscribe at any time.
-            </p>
-          </form>
+          {/* CTA Button */}
+          <div className="max-w-md mx-auto text-center">
+            <Button 
+              variant="hero" 
+              size="lg" 
+              className="w-full sm:w-auto"
+              onClick={() => window.open('https://ernst-3kn785vq.scoreapp.com/', '_blank')}
+            >
+              Join Waitlist
+              <ArrowRight className="w-4 h-4" />
+            </Button>
+          </div>
 
           {/* Social proof placeholder */}
           <div className="text-center pt-6 border-t border-border">

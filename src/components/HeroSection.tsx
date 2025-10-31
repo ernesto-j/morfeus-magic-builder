@@ -1,26 +1,14 @@
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { ArrowRight } from "lucide-react";
-import { useState } from "react";
-import { toast } from "sonner";
 import { useTypewriter } from "@/hooks/use-typewriter";
 
 const HeroSection = () => {
-  const [email, setEmail] = useState("");
   const { displayText, isTyping } = useTypewriter({
     phrases: ["unplug", "scale", "build", "evolve", "innovate"],
     typingSpeed: 100,
     deletingSpeed: 50,
     pauseDuration: 1500,
   });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email) {
-      toast.success("Thanks for joining! We'll be in touch soon.");
-      setEmail("");
-    }
-  };
 
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
@@ -54,33 +42,26 @@ const HeroSection = () => {
           <span className="text-foreground">Observable. Scalable. Autonomous.</span>
         </p>
 
-        {/* Waitlist form */}
+        {/* CTA Button */}
         <div className="max-w-md mx-auto">
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="bg-card/50 backdrop-blur-sm border border-border rounded-lg p-6 space-y-4">
-              <div>
-                <h3 className="text-lg font-semibold mb-2">Join the Waitlist</h3>
-                <p className="text-sm text-muted-foreground">
-                  Be the first to access Morfeus when we launch
-                </p>
-              </div>
-              
-              <div className="space-y-3">
-                <Input
-                  type="email"
-                  placeholder="neo@matrix.ai"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className="bg-input border-border"
-                />
-                <Button type="submit" variant="hero" size="lg" className="w-full">
-                  Get Early Access
-                  <ArrowRight className="w-4 h-4" />
-                </Button>
-              </div>
+          <div className="bg-card/50 backdrop-blur-sm border border-border rounded-lg p-6 space-y-4">
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Join the Waitlist</h3>
+              <p className="text-sm text-muted-foreground">
+                Be the first to access Morfeus when we launch
+              </p>
             </div>
-          </form>
+            
+            <Button 
+              variant="hero" 
+              size="lg" 
+              className="w-full"
+              onClick={() => window.open('https://ernst-3kn785vq.scoreapp.com/', '_blank')}
+            >
+              Get Early Access
+              <ArrowRight className="w-4 h-4" />
+            </Button>
+          </div>
         </div>
       </div>
     </section>
