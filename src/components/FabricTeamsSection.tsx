@@ -168,7 +168,7 @@ const FabricTeamsSection = () => {
   const accentColor = isDataTeam ? "primary" : "purple-500";
 
   const { displayText: titleText, isTyping: titleTyping } = useTypewriter({
-    phrases: [isDataTeam ? "Specialized Data Teams" : "Specialised App Development Teams"],
+    phrases: [isDataTeam ? "Specialized Development Teams" : "Specialised App Development Teams"],
     typingSpeed: 80,
     deletingSpeed: 0,
     pauseDuration: 999999,
@@ -177,7 +177,7 @@ const FabricTeamsSection = () => {
   const { displayText: subtitleText, isTyping: subtitleTyping } = useTypewriter({
     phrases: [
       isDataTeam
-        ? "Customisable Data AI teams for every phase of your architecture"
+        ? "Customisable AI App Development teams for your solutions architecture"
         : "Build modern apps fast with AI developers who actually know their stuff"
     ],
     typingSpeed: 30,
