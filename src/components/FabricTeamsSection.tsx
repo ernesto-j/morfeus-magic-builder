@@ -168,7 +168,7 @@ const FabricTeamsSection = () => {
   const accentColor = isDataTeam ? "primary" : "purple-500";
 
   const { displayText: titleText, isTyping: titleTyping } = useTypewriter({
-    phrases: [isDataTeam ? "Data Teams" : "App Development Team"],
+    phrases: [isDataTeam ? "Specialized Data Teams" : "App Development Team"],
     typingSpeed: 80,
     deletingSpeed: 0,
     pauseDuration: 999999,
@@ -219,7 +219,6 @@ const FabricTeamsSection = () => {
           </div>
 
           <h2 className="text-4xl md:text-5xl font-bold" key={`title-${titleKey}`}>
-            {isDataTeam ? "Specialized " : ""}
             <span className={isDataTeam ? "text-primary" : "text-purple-400"}>
               {titleText}<span className={`${titleTyping ? 'animate-pulse' : 'opacity-0'}`}>_</span>
             </span>
