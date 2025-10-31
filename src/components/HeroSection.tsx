@@ -79,13 +79,6 @@ const HeroSection = () => {
                   <ArrowRight className="w-4 h-4" />
                 </Button>
               </div>
-
-              <p className="text-xs text-muted-foreground">
-                Already have an account?{" "}
-                <a href="#" className="text-primary hover:underline">
-                  Sign in
-                </a>
-              </p>
             </div>
           </form>
         </div>
