@@ -203,7 +203,7 @@ const FabricTeamsSection = () => {
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             {isDataTeam
               ? "Customisable Data AI teams for every phase of your architecture"
-              : "Expert development teams ready to build modern applications with cutting-edge technology"}
+              : "Build modern apps fast with AI developers who actually know their stuff"}
           </p>
         </div>
 
