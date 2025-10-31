@@ -1,5 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Boxes, Settings, Terminal, Bug, BarChart3, Cloud } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const teams = [
   {
@@ -41,12 +42,26 @@ const teams = [
 ];
 
 const TeamsSection = () => {
+  const [currentPhrase, setCurrentPhrase] = useState(0);
+  const phrases = [
+    "Morfeus Autonomous Team",
+    "AI Squad",
+    "Agentic Army"
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentPhrase((prev) => (prev + 1) % phrases.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative py-20 px-4">
       <div className="max-w-6xl mx-auto space-y-12">
         <div className="text-center space-y-4 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold">
-            Your <span className="text-primary">Autonomous Team</span>
+            Your <span className="text-primary transition-all duration-300">{phrases[currentPhrase]}</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Pre-configured AI agents specialized for Microsoft Fabric migrations, modernizations, and greenfield projects
