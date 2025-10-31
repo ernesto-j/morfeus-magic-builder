@@ -61,10 +61,10 @@ const TeamsSection = () => {
       <div className="max-w-6xl mx-auto space-y-12">
         <div className="text-center space-y-4 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold">
-            Your <span className="text-primary transition-all duration-300">{phrases[currentPhrase]}</span>
+            Your <span key={currentPhrase} className="text-primary animate-fade-in inline-block">{phrases[currentPhrase]}</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Pre-configured AI agents specialized for Microsoft Fabric migrations, modernizations, and greenfield projects
+            Pre-configured Agentic teams specialised in AI architecture, App Development, Data & Analytics.
           </p>
         </div>
 
