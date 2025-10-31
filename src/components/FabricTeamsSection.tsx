@@ -197,7 +197,7 @@ const FabricTeamsSection = () => {
           <h2 className="text-4xl md:text-5xl font-bold">
             Specialized{" "}
             <span className={isDataTeam ? "text-primary" : "text-purple-400"}>
-              {isDataTeam ? "Data Teams" : "Context Engineering Teams"}
+              {isDataTeam ? "Data Teams" : "App Development"}
             </span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
