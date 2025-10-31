@@ -1,9 +1,54 @@
 import { Code2 } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const CodeSection = () => {
+  const [displayText, setDisplayText] = useState("");
+  const [phraseIndex, setPhraseIndex] = useState(0);
+  const [isTyping, setIsTyping] = useState(true);
+
+  const phrases = [
+    "# morfeus boot...",
+    "$ morfeus loading...",
+    "> initiated",
+    "$ morfeus --start"
+  ];
+
+  useEffect(() => {
+    const currentPhrase = phrases[phraseIndex];
+    
+    if (isTyping) {
+      if (displayText.length < currentPhrase.length) {
+        const timeout = setTimeout(() => {
+          setDisplayText(currentPhrase.slice(0, displayText.length + 1));
+        }, 100);
+        return () => clearTimeout(timeout);
+      } else {
+        const timeout = setTimeout(() => {
+          setIsTyping(false);
+        }, 2000);
+        return () => clearTimeout(timeout);
+      }
+    } else {
+      const timeout = setTimeout(() => {
+        setDisplayText("");
+        setPhraseIndex((prev) => (prev + 1) % phrases.length);
+        setIsTyping(true);
+      }, 500);
+      return () => clearTimeout(timeout);
+    }
+  }, [displayText, isTyping, phraseIndex]);
+
   return (
     <section className="relative py-20 px-4">
       <div className="max-w-4xl mx-auto">
+        {/* Typewriter effect */}
+        <div className="mb-8 text-center">
+          <div className="inline-block font-mono text-lg md:text-xl text-primary bg-card/50 backdrop-blur-sm px-6 py-3 rounded-lg border border-border">
+            {displayText}
+            <span className="animate-pulse ml-1">_</span>
+          </div>
+        </div>
+
         <div className="relative overflow-hidden rounded-xl border border-border bg-card/30 backdrop-blur-sm p-8">
           {/* Terminal header */}
           <div className="flex items-center gap-2 mb-6 pb-4 border-b border-border">
