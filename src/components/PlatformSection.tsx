@@ -174,6 +174,37 @@ const PlatformSection = () => {
             })}
           </div>
         </div>
+
+        {/* Founding team experience section */}
+        <div className="pt-16 space-y-8 border-t border-border">
+          <div className="text-center space-y-2 animate-fade-in">
+            <h3 className="text-2xl md:text-3xl font-bold">Trusted Experience</h3>
+            <p className="text-muted-foreground">
+              Our founding team previously consulted for industry leaders
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              { name: "ANZ Bank", short: "ANZ" },
+              { name: "Bain & Company", short: "Bain & Co" },
+              { name: "Sportsbet", short: "Sportsbet" },
+              { name: "Queensland University of Technology", short: "QUT" }
+            ].map((company, index) => (
+              <div
+                key={company.name}
+                className="group flex items-center justify-center p-8 rounded-lg border border-border bg-card/30 opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 animate-fade-in"
+                style={{ animationDelay: `${1200 + index * 100}ms` }}
+              >
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-foreground">
+                    {company.short}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
