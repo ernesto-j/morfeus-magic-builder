@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Briefcase, Zap, GraduationCap, ArrowRight } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const offerings = [
   {
@@ -42,13 +43,23 @@ const offerings = [
 ];
 
 const OfferingsSection = () => {
+  const [currentWord, setCurrentWord] = useState(0);
+  const words = ["Path", "Team", "Framework"];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentWord((prev) => (prev + 1) % words.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative py-24 px-4">
       <div className="max-w-7xl mx-auto space-y-16">
         {/* Section header */}
         <div className="text-center space-y-4 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold">
-            Choose Your <span className="text-gradient">Path</span>
+            {currentWord === 0 ? "Choose" : currentWord === 1 ? "Expand" : "Build"} Your <span key={currentWord} className="text-gradient animate-fade-in inline-block">{words[currentWord]}</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Whether you need strategic guidance, a managed platform, or team education, 
