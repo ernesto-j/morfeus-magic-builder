@@ -186,21 +186,21 @@ const PlatformSection = () => {
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { name: "ANZ Bank", short: "ANZ" },
-              { name: "Bain & Company", short: "Bain & Co" },
-              { name: "Sportsbet", short: "Sportsbet" },
-              { name: "Queensland University of Technology", short: "QUT" }
+              { name: "ANZ Bank", logo: "/logos/anz-logo.png", alt: "ANZ Bank" },
+              { name: "Bain & Company", logo: "/logos/bain-logo.png", alt: "Bain & Company" },
+              { name: "Sportsbet", logo: "/logos/sportsbet-logo.png", alt: "Sportsbet" },
+              { name: "Shell", logo: "/logos/shell-logo.png", alt: "Shell" }
             ].map((company, index) => (
               <div
                 key={company.name}
                 className="group flex items-center justify-center p-8 rounded-lg border border-border bg-card/30 opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 animate-fade-in"
                 style={{ animationDelay: `${1200 + index * 100}ms` }}
               >
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-foreground">
-                    {company.short}
-                  </div>
-                </div>
+                <img
+                  src={company.logo}
+                  alt={company.alt}
+                  className="w-full h-auto max-h-12 object-contain"
+                />
               </div>
             ))}
           </div>
