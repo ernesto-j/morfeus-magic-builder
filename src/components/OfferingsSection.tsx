@@ -62,8 +62,7 @@ const OfferingsSection = () => {
             {currentWord === 0 ? "Choose" : currentWord === 1 ? "Expand" : "Build"} Your <span key={currentWord} className="text-gradient animate-fade-in inline-block">{words[currentWord]}</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Whether you need strategic guidance, a managed platform, or team education, 
-            Morfeus adapts to your organization's needs
+            Join the revolution. The machines aren't taking over—they're working for you. Pick your reality.
           </p>
         </div>
 
