@@ -20,14 +20,6 @@ export const useTypewriter = ({
   const timeoutRef = useRef<NodeJS.Timeout>();
 
   useEffect(() => {
-    // Reset state when phrases change
-    setDisplayText("");
-    setPhraseIndex(0);
-    setIsTyping(true);
-    setIsPaused(false);
-  }, [phrases]);
-
-  useEffect(() => {
     const currentPhrase = phrases[phraseIndex];
 
     if (isPaused) {

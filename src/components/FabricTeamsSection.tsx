@@ -1,6 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Sparkles, RefreshCw, GitBranch, Database, Workflow, Brain, BarChart3, Layers, Code2, Boxes, Cloud, TestTube, Palette, Rocket, FileCode, Zap } from "lucide-react";
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import { useTypewriter } from "@/hooks/use-typewriter";
 
 // Data Teams Configuration
@@ -167,29 +167,19 @@ const FabricTeamsSection = () => {
   const teams = isDataTeam ? fabricTeams : contextEngineeringTeams;
   const accentColor = isDataTeam ? "primary" : "purple-500";
 
-  const titlePhrases = useMemo(
-    () => [isDataTeam ? "Specialized Development Teams" : "Specialised App Development Teams"],
-    [isDataTeam]
-  );
-
-  const subtitlePhrases = useMemo(
-    () => [
-      isDataTeam
-        ? "Customisable AI App Development teams for your solutions architecture"
-        : "Build modern apps fast with AI developers who actually know their stuff"
-    ],
-    [isDataTeam]
-  );
-
   const { displayText: titleText, isTyping: titleTyping } = useTypewriter({
-    phrases: titlePhrases,
+    phrases: [isDataTeam ? "Data Teams" : "App Development Team"],
     typingSpeed: 80,
     deletingSpeed: 0,
     pauseDuration: 999999,
   });
 
   const { displayText: subtitleText, isTyping: subtitleTyping } = useTypewriter({
-    phrases: subtitlePhrases,
+    phrases: [
+      isDataTeam
+        ? "Customisable Data AI teams for every phase of your architecture"
+        : "Build modern apps fast with AI developers who actually know their stuff"
+    ],
     typingSpeed: 30,
     deletingSpeed: 0,
     pauseDuration: 999999,
@@ -198,9 +188,6 @@ const FabricTeamsSection = () => {
   useEffect(() => {
     setTitleKey((prev) => prev + 1);
   }, [selectedTeam]);
-
-  // Create a unique key for the typewriter to force reset
-  const typewriterKey = `${selectedTeam}-${titleKey}`;
 
   return (
     <section className="relative py-24 px-4 bg-card/30">
@@ -231,12 +218,13 @@ const FabricTeamsSection = () => {
             </button>
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-bold" key={typewriterKey}>
+          <h2 className="text-4xl md:text-5xl font-bold" key={`title-${titleKey}`}>
+            {isDataTeam ? "Specialized " : ""}
             <span className={isDataTeam ? "text-primary" : "text-purple-400"}>
               {titleText}<span className={`${titleTyping ? 'animate-pulse' : 'opacity-0'}`}>_</span>
             </span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto" key={typewriterKey}>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto" key={`subtitle-${titleKey}`}>
             {subtitleText}<span className={`${subtitleTyping ? 'animate-pulse' : 'opacity-0'}`}>_</span>
           </p>
         </div>
