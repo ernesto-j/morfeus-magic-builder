@@ -76,11 +76,11 @@ const contextEngineeringMembers = [
 const fabricTeams = [
   {
     icon: Sparkles,
-    title: "MS Fabric Greenfield",
-    description: "Build next-generation data platforms from scratch",
+    title: "Data Platform Greenfield",
+    description: "Build modern data platforms from the ground up",
     capabilities: [
       "Modern data architecture design",
-      "Lakehouse implementation",
+      "Data warehouse & lake architecture",
       "Real-time analytics setup",
       "AI/ML pipeline integration"
     ],
@@ -89,7 +89,7 @@ const fabricTeams = [
   },
   {
     icon: RefreshCw,
-    title: "MS Fabric Modernisation",
+    title: "Data Platform Modernisation",
     description: "Transform legacy systems into modern data platforms",
     capabilities: [
       "Legacy system assessment",
@@ -102,8 +102,8 @@ const fabricTeams = [
   },
   {
     icon: GitBranch,
-    title: "MS Fabric Migration",
-    description: "Seamless migration to Microsoft Fabric ecosystem",
+    title: "Data Platform Migration",
+    description: "Seamless migration between modern data platforms",
     capabilities: [
       "Data warehouse migration",
       "ETL pipeline conversion",
