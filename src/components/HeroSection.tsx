@@ -1,11 +1,20 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ArrowRight } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { toast } from "sonner";
 
 const HeroSection = () => {
   const [email, setEmail] = useState("");
+  const [currentWord, setCurrentWord] = useState(0);
+  const words = ["unplug", "scale", "build", "evolve", "innovate"];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentWord((prev) => (prev + 1) % words.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -37,7 +46,7 @@ const HeroSection = () => {
         <h1 className="text-5xl md:text-7xl font-bold leading-tight">
           <span className="text-primary glow-primary">Knock, knock.</span>
           <br />
-          Ready to <span className="text-gradient">unplug</span>?
+          Ready to <span className="text-gradient transition-opacity duration-300">{words[currentWord]}</span>?
         </h1>
 
         {/* Subheadline */}
