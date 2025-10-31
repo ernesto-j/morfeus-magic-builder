@@ -168,7 +168,7 @@ const FabricTeamsSection = () => {
   const accentColor = isDataTeam ? "primary" : "purple-500";
 
   const { displayText: titleText, isTyping: titleTyping } = useTypewriter({
-    phrases: [isDataTeam ? "Specialized Data Teams" : "App Development Team"],
+    phrases: [isDataTeam ? "Specialized Data Teams" : "Specialised App Development Teams"],
     typingSpeed: 80,
     deletingSpeed: 0,
     pauseDuration: 999999,
