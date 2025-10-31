@@ -112,6 +112,18 @@ const PlatformSection = () => {
           })}
         </div>
 
+        {/* 10-80-10 Principle header */}
+        <div className="text-center space-y-3 pt-8 animate-fade-in">
+          <h3 className="text-3xl md:text-4xl font-bold">
+            The <span className="text-gradient">10-80-10 Principle</span>
+          </h3>
+          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+            <span className="font-semibold text-primary">10%</span> of your time initiating and setting up, 
+            <span className="font-semibold text-secondary"> 80%</span> autonomous agent operation, 
+            <span className="font-semibold text-accent"> 10%</span> wrap-up and approval
+          </p>
+        </div>
+
         {/* Stats bar */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-border">
           <div className="text-center space-y-2 animate-fade-in" style={{ animationDelay: "400ms" }}>
