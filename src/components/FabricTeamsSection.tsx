@@ -180,7 +180,7 @@ const FabricTeamsSection = () => {
                   : "bg-card/50 border border-border text-muted-foreground hover:bg-card"
               }`}
             >
-              Microsoft Fabric Expertise
+              Context Analytics
             </button>
             <button
               onClick={() => setSelectedTeam("context")}
