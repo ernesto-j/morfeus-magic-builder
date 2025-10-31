@@ -202,7 +202,7 @@ const FabricTeamsSection = () => {
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             {isDataTeam
-              ? "Pre-configured AI agent teams optimized for every phase of your Microsoft Fabric journey"
+              ? "Customisable Data AI teams for every phase of your architecture"
               : "Expert development teams ready to build modern applications with cutting-edge technology"}
           </p>
         </div>
