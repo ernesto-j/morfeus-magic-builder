@@ -10,7 +10,7 @@ const Navigation = () => {
 
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "Morfeus Framework", path: "/framework" },
+    { name: "Framework", path: "/framework" },
     { name: "Data", path: "/data" },
     { name: "Blueprints", path: "/blueprints" },
     { name: "Agentic Consulting", path: "/agentic-consulting" },
