@@ -12,7 +12,7 @@ const phases = [
       { task: "Build MVP agent (1 use case)", completed: false },
       { task: "Establish observability baseline", completed: false }
     ],
-    color: "bg-blue-50 dark:bg-blue-950/30 border-blue-500"
+    color: "bg-primary/10 border-primary/50"
   },
   {
     phase: "Phase 2: Expansion",
@@ -24,7 +24,7 @@ const phases = [
       { task: "Train team on AX principles", completed: false },
       { task: "Achieve Level 2 OSA maturity", completed: false }
     ],
-    color: "bg-green-50 dark:bg-green-950/30 border-green-500"
+    color: "bg-accent/10 border-accent/50"
   },
   {
     phase: "Phase 3: Optimization",
@@ -36,7 +36,7 @@ const phases = [
       { task: "Cost optimization (Platform Economics)", completed: false },
       { task: "Achieve Level 3 OSA maturity", completed: false }
     ],
-    color: "bg-purple-50 dark:bg-purple-950/30 border-purple-500"
+    color: "bg-secondary/10 border-secondary/50"
   },
   {
     phase: "Phase 4: Autonomy",
@@ -48,7 +48,7 @@ const phases = [
       { task: "Zero-touch operations for 80% of tasks", completed: false },
       { task: "Achieve Level 4 OSA maturity", completed: false }
     ],
-    color: "bg-orange-50 dark:bg-orange-950/30 border-orange-500"
+    color: "bg-primary/10 border-primary/50"
   }
 ];
 
@@ -84,9 +84,9 @@ const TransformationRoadmap = () => {
                 <p className="text-sm text-muted-foreground">{phase.duration}</p>
               </div>
               <div className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                phase.status === 'current' ? 'bg-blue-600 text-white' :
-                phase.status === 'planned' ? 'bg-green-600 text-white' :
-                'bg-gray-400 text-white'
+                phase.status === 'current' ? 'bg-primary text-primary-foreground' :
+                phase.status === 'planned' ? 'bg-accent text-accent-foreground' :
+                'bg-muted text-muted-foreground'
               }`}>
                 {phase.status.toUpperCase()}
               </div>
@@ -103,9 +103,9 @@ const TransformationRoadmap = () => {
                   className="flex items-center gap-3 p-3 bg-background/80 rounded border border-border hover:shadow-md transition-shadow"
                 >
                   {milestone.completed ? (
-                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
                   ) : (
-                    <Circle className="w-5 h-5 text-gray-400 flex-shrink-0" />
+                    <Circle className="w-5 h-5 text-muted-foreground flex-shrink-0" />
                   )}
                   <span className={`text-sm ${milestone.completed ? 'line-through text-muted-foreground' : ''}`}>
                     {milestone.task}

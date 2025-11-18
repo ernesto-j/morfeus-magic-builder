@@ -67,9 +67,9 @@ const UXvsAXComparison = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <Card className="p-6 border-2 border-blue-500/50 bg-blue-50 dark:bg-blue-950/30 h-full">
+          <Card className="p-6 border-2 border-primary/50 bg-primary/10 h-full">
             <div className="text-center mb-4">
-              <User className="w-12 h-12 mx-auto mb-3 text-blue-600" />
+              <User className="w-12 h-12 mx-auto mb-3 text-primary" />
               <h4 className="text-xl font-bold">User Experience (UX)</h4>
               <p className="text-sm text-muted-foreground">Designed for human interaction</p>
             </div>
@@ -82,9 +82,9 @@ const UXvsAXComparison = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <Card className="p-6 border-2 border-green-500/50 bg-green-50 dark:bg-green-950/30 h-full">
+          <Card className="p-6 border-2 border-accent/50 bg-accent/10 h-full">
             <div className="text-center mb-4">
-              <Bot className="w-12 h-12 mx-auto mb-3 text-green-600" />
+              <Bot className="w-12 h-12 mx-auto mb-3 text-accent" />
               <h4 className="text-xl font-bold">Agent Experience (AX)</h4>
               <p className="text-sm text-muted-foreground">Designed for AI agent interaction</p>
             </div>
@@ -105,12 +105,12 @@ const UXvsAXComparison = () => {
             <div className="font-semibold text-center md:text-left">
               {point.aspect}
             </div>
-            <div className="text-sm bg-blue-50 dark:bg-blue-950/30 p-3 rounded border border-blue-500/30">
-              <span className="text-blue-600 font-semibold">UX: </span>
+            <div className="text-sm bg-primary/10 p-3 rounded border border-primary/30">
+              <span className="text-primary font-semibold">UX: </span>
               {point.ux}
             </div>
-            <div className="text-sm bg-green-50 dark:bg-green-950/30 p-3 rounded border border-green-500/30">
-              <span className="text-green-600 font-semibold">AX: </span>
+            <div className="text-sm bg-accent/10 p-3 rounded border border-accent/30">
+              <span className="text-accent font-semibold">AX: </span>
               {point.ax}
             </div>
           </motion.div>

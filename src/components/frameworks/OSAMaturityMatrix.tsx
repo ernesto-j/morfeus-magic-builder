@@ -13,7 +13,7 @@ const dimensions = [
       { level: 3, label: "Proactive", description: "Predict issues before they occur" },
       { level: 4, label: "Omniscient", description: "Complete system understanding" }
     ],
-    color: "text-blue-600"
+    color: "text-primary"
   },
   {
     icon: TrendingUp,
@@ -25,7 +25,7 @@ const dimensions = [
       { level: 3, label: "Automated", description: "Fully automated scaling" },
       { level: 4, label: "Elastic", description: "Self-optimizing resources" }
     ],
-    color: "text-green-600"
+    color: "text-accent"
   },
   {
     icon: Zap,
@@ -37,7 +37,7 @@ const dimensions = [
       { level: 3, label: "Independent", description: "Self-managing operations" },
       { level: 4, label: "Intelligent", description: "Self-improving systems" }
     ],
-    color: "text-purple-600"
+    color: "text-secondary"
   }
 ];
 

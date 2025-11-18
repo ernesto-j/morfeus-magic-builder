@@ -12,36 +12,36 @@ const pillars = [
     icon: Database,
     title: "Data Foundation",
     description: "Lakehouse architecture, data mesh patterns, quality frameworks",
-    color: "text-blue-600",
-    borderColor: "border-blue-500/50"
+    color: "text-primary",
+    borderColor: "border-primary/50"
   },
   {
     icon: Layers,
     title: "Platform Infrastructure",
     description: "Cloud-native architecture, IaC, CI/CD pipelines",
-    color: "text-purple-600",
-    borderColor: "border-purple-500/50"
+    color: "text-accent",
+    borderColor: "border-accent/50"
   },
   {
     icon: Bot,
     title: "Agent Orchestration",
     description: "AI agents, workflow automation, decision engines",
-    color: "text-green-600",
-    borderColor: "border-green-500/50"
+    color: "text-secondary",
+    borderColor: "border-secondary/50"
   },
   {
     icon: Eye,
     title: "Observability",
     description: "Monitoring, logging, alerting, performance tracking",
-    color: "text-orange-600",
-    borderColor: "border-orange-500/50"
+    color: "text-primary",
+    borderColor: "border-primary/50"
   },
   {
     icon: Shield,
     title: "Governance",
     description: "Security, compliance, data lineage, access control",
-    color: "text-red-600",
-    borderColor: "border-red-500/50"
+    color: "text-accent",
+    borderColor: "border-accent/50"
   }
 ];
 
