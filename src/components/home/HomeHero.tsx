@@ -25,7 +25,7 @@ const HomeHero = () => {
         </h1>
         
         <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto mb-12 animate-fade-in">
-          The Morfeus suite automates data platform engineering, security assessment, 
+          The Morfeus suite automates data architecture, software development, security assessment,
           and enterprise architecture—delivering in months what traditionally takes years.
         </p>
         

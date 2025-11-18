@@ -1,30 +1,37 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Search, Shield, FileText } from "lucide-react";
+import { Search, Shield, Video, Activity } from "lucide-react";
 
 const FreeTools = () => {
   const tools = [
     {
       icon: Search,
-      title: "Fabric Scope",
-      badge: "FREE Forever",
-      description: "Azure Fabric architecture assessment tool",
-      features: "155-point framework | 12 dimensions",
+      title: "FabricScope",
+      badge: "Free Trial",
+      description: "Live Fabric architecture scanning tool and architecture assessment",
+      features: "155-point framework | Real-time analysis | 12 dimensions",
     },
     {
       icon: Shield,
       title: "PII Profiler",
-      badge: "FREE Forever",
-      description: "Automated PII detection & classification",
-      features: "GDPR compliant | Privacy Act ready",
+      badge: "Free Trial",
+      description: "Policy RAG - AI-powered policy documentation search",
+      features: "GDPR compliant | Privacy Act ready | Natural language queries",
     },
     {
-      icon: FileText,
-      title: "Policy RAG",
-      badge: "Coming Soon",
-      description: "AI-powered policy documentation search",
-      features: "Natural language queries | Context-aware",
+      icon: Video,
+      title: "BIBugger",
+      badge: "Beta",
+      description: "MS Teams Integrated BI Video bug capturing tool",
+      features: "Teams integration | Video capture | Auto-ticketing",
+    },
+    {
+      icon: Activity,
+      title: "DataSentinel",
+      badge: "Beta",
+      description: "Live Data Engineering pipeline tool",
+      features: "Log scanning | ADO/JIRA integration | AI-powered fix suggestions",
     },
   ];
 
@@ -38,7 +45,7 @@ const FreeTools = () => {
           Powerful tools to assess and optimize your data platforms
         </p>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
           {tools.map((tool, index) => {
             const Icon = tool.icon;
             return (
