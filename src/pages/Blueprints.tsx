@@ -1,3 +1,4 @@
+import Navigation from "@/components/shared/Navigation";
 import PageHero from "@/components/shared/PageHero";
 import FreeToolsSection from "@/components/blueprints/FreeToolsSection";
 import PremiumBlueprints from "@/components/blueprints/PremiumBlueprints";
@@ -6,6 +7,7 @@ import ExpansionPacks from "@/components/blueprints/ExpansionPacks";
 const Blueprints = () => {
   return (
     <main className="min-h-screen bg-background">
+      <Navigation />
       <PageHero
         title="Blueprints. Tools. Expansion Packs."
         description="Free and premium tools to accelerate your data platform initiatives"

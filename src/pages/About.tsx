@@ -1,3 +1,4 @@
+import Navigation from "@/components/shared/Navigation";
 import AboutHero from "@/components/about/AboutHero";
 import StoryTimeline from "@/components/about/StoryTimeline";
 import TeamSection from "@/components/about/TeamSection";
@@ -8,6 +9,7 @@ import CareersSection from "@/components/about/CareersSection";
 const About = () => {
   return (
     <main className="min-h-screen bg-background">
+      <Navigation />
       <AboutHero />
       <StoryTimeline />
       <TeamSection />

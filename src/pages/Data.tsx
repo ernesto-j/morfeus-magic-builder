@@ -1,3 +1,4 @@
+import Navigation from "@/components/shared/Navigation";
 import PageHero from "@/components/shared/PageHero";
 import ServiceSection from "@/components/data/ServiceSection";
 import ComparisonTable from "@/components/data/ComparisonTable";
@@ -7,6 +8,7 @@ import FAQ from "@/components/data/FAQ";
 const Data = () => {
   return (
     <main className="min-h-screen bg-background">
+      <Navigation />
       <PageHero
         breadcrumb="Home > Morfeus Data"
         title="Azure Fabric & Databricks. Delivered 3x Faster."
