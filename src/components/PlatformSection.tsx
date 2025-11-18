@@ -135,11 +135,11 @@ const PlatformSection = () => {
         {/* Stats bar */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-border">
           <div className="text-center space-y-2 animate-fade-in" style={{ animationDelay: "400ms" }}>
-            <div className="text-4xl font-bold text-primary">10x</div>
+            <div className="text-4xl font-bold text-primary">3x</div>
             <div className="text-sm text-muted-foreground">Faster Deployment</div>
           </div>
           <div className="text-center space-y-2 animate-fade-in" style={{ animationDelay: "500ms" }}>
-            <div className="text-4xl font-bold text-secondary">85%</div>
+            <div className="text-4xl font-bold text-secondary">60%</div>
             <div className="text-sm text-muted-foreground">Cost Reduction</div>
           </div>
           <div className="text-center space-y-2 animate-fade-in" style={{ animationDelay: "600ms" }}>
