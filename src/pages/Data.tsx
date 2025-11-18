@@ -19,7 +19,7 @@ const Data = () => {
         stats={[
           { value: "2-4 weeks", label: "vs. 8-12 traditional" },
           { value: "$25K", label: "starting (vs. $150K+ traditional)" },
-          { value: "$1.9M", label: "value (UCQ Healthcare)" },
+          { value: "$XXX", label: "client value example" },
         ]}
         primaryCTA="Request Audit"
         secondaryCTA="See Pricing"
