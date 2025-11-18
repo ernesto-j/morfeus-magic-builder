@@ -6,28 +6,28 @@ const quadrants = [
     title: "Buy/Rent",
     description: "Commodity capabilities",
     examples: ["Cloud storage", "Auth services", "Email delivery"],
-    color: "bg-blue-50 dark:bg-blue-950/30 border-blue-500"
+    color: "bg-primary/10 border-primary/50"
   },
   {
     position: "top-right",
     title: "Buy + Customize",
     description: "Strategic but not unique",
     examples: ["CRM platforms", "BI tools", "Orchestrators"],
-    color: "bg-green-50 dark:bg-green-950/30 border-green-500"
+    color: "bg-accent/10 border-accent/50"
   },
   {
     position: "bottom-left",
     title: "Outsource",
     description: "Non-critical operations",
     examples: ["Help desk", "Basic monitoring", "Data entry"],
-    color: "bg-gray-50 dark:bg-gray-950/30 border-gray-500"
+    color: "bg-muted/30 border-muted/50"
   },
   {
     position: "bottom-right",
     title: "Build",
     description: "Core competitive advantage",
     examples: ["Proprietary algorithms", "Domain agents", "IP"],
-    color: "bg-purple-50 dark:bg-purple-950/30 border-purple-500"
+    color: "bg-secondary/10 border-secondary/50"
   }
 ];
 

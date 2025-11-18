@@ -15,8 +15,8 @@ const stages = [
       "Can't scale"
     ],
     metrics: { speed: 20, reliability: 30, scale: 10 },
-    color: "text-red-600",
-    bgColor: "bg-red-50 dark:bg-red-950/30"
+    color: "text-destructive",
+    bgColor: "bg-destructive/10 border-destructive/50"
   },
   {
     icon: Code,
@@ -30,8 +30,8 @@ const stages = [
       "Moderate scale"
     ],
     metrics: { speed: 60, reliability: 80, scale: 60 },
-    color: "text-blue-600",
-    bgColor: "bg-blue-50 dark:bg-blue-950/30"
+    color: "text-primary",
+    bgColor: "bg-primary/10 border-primary/50"
   },
   {
     icon: Bot,
@@ -45,8 +45,8 @@ const stages = [
       "Infinite scale"
     ],
     metrics: { speed: 95, reliability: 95, scale: 100 },
-    color: "text-green-600",
-    bgColor: "bg-green-50 dark:bg-green-950/30"
+    color: "text-accent",
+    bgColor: "bg-accent/10 border-accent/50"
   }
 ];
 

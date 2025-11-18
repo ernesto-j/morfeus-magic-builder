@@ -14,8 +14,8 @@ const paradigms = [
       "Limited autonomy"
     ],
     useCase: "Code completion, content drafting",
-    color: "text-blue-600",
-    bgColor: "bg-blue-50 dark:bg-blue-950/30"
+    color: "text-primary",
+    bgColor: "bg-primary/10 border-primary/50"
   },
   {
     icon: Bot,
@@ -28,8 +28,8 @@ const paradigms = [
       "Proactive automation"
     ],
     useCase: "Data pipeline optimization, quality checks",
-    color: "text-green-600",
-    bgColor: "bg-green-50 dark:bg-green-950/30"
+    color: "text-accent",
+    bgColor: "bg-accent/10 border-accent/50"
   },
   {
     icon: Network,
@@ -42,8 +42,8 @@ const paradigms = [
       "System-level optimization"
     ],
     useCase: "End-to-end platform orchestration",
-    color: "text-purple-600",
-    bgColor: "bg-purple-50 dark:bg-purple-950/30"
+    color: "text-secondary",
+    bgColor: "bg-secondary/10 border-secondary/50"
   }
 ];
 
