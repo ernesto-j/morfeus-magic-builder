@@ -1,4 +1,5 @@
 import Navigation from "@/components/shared/Navigation";
+import Footer from "@/components/shared/Footer";
 import HeroSection from "@/components/HeroSection";
 import TeamsSection from "@/components/TeamsSection";
 import CodeSection from "@/components/CodeSection";
@@ -18,6 +19,7 @@ const MorfeusFramework = () => {
       <FabricTeamsSection />
       <PlatformSection />
       <CTASection />
+      <Footer />
     </main>
   );
 };

@@ -1,8 +1,14 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,10 +17,16 @@ const Navigation = () => {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Framework", path: "/framework" },
-    { name: "Data", path: "/data" },
-    { name: "Blueprints", path: "/blueprints" },
     { name: "Agentic Consulting", path: "/agentic-consulting" },
     { name: "About", path: "/about" },
+  ];
+
+  const domainLinks = [
+    { name: "Morfeus Data", path: "/data" },
+    { name: "Morfeus Blueprints", path: "/blueprints" },
+    { name: "Morfeus Cyber", path: "#", disabled: true },
+    { name: "Morfeus Engineer", path: "#", disabled: true },
+    { name: "Morfeus Architecture", path: "#", disabled: true },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -32,7 +44,7 @@ const Navigation = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -47,12 +59,39 @@ const Navigation = () => {
                 {link.name}
               </Link>
             ))}
+            
+            {/* Domains Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-primary transition-colors outline-none">
+                Domains
+                <ChevronDown className="w-4 h-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-56 bg-background border-border">
+                {domainLinks.map((domain) => (
+                  <DropdownMenuItem key={domain.path} asChild disabled={domain.disabled}>
+                    <Link
+                      to={domain.path}
+                      className={cn(
+                        "cursor-pointer",
+                        domain.disabled && "opacity-50 cursor-not-allowed"
+                      )}
+                    >
+                      {domain.name}
+                      {domain.disabled && (
+                        <span className="ml-auto text-xs text-muted-foreground">Coming Soon</span>
+                      )}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
             <Button 
               size="sm"
-              onClick={() => window.open("https://ernst-3kn785vq.scoreapp.com/", "_blank")}
-              className="ml-4"
+              onClick={() => window.open("https://app.scoreapp.com/st/ZnJhbWV3b3JrfHx8fHx8aHR0cHM6Ly9tb3JmZXVzLXNpdGUubG92YWJsZS5hcHA=", "_blank")}
+              className="ml-2"
             >
-              Free Assessment
+              Request Assessment
             </Button>
           </div>
 
@@ -84,15 +123,41 @@ const Navigation = () => {
                   {link.name}
                 </Link>
               ))}
+              
+              {/* Domains Section */}
+              <div className="py-2">
+                <div className="text-xs font-semibold text-muted-foreground mb-2 uppercase">Domains</div>
+                <div className="flex flex-col gap-2 pl-2">
+                  {domainLinks.map((domain) => (
+                    <Link
+                      key={domain.path}
+                      to={domain.path}
+                      onClick={() => !domain.disabled && setIsOpen(false)}
+                      className={cn(
+                        "text-sm transition-colors py-1",
+                        domain.disabled 
+                          ? "text-muted-foreground/50 cursor-not-allowed"
+                          : "text-muted-foreground hover:text-primary"
+                      )}
+                    >
+                      {domain.name}
+                      {domain.disabled && (
+                        <span className="ml-2 text-xs">(Coming Soon)</span>
+                      )}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
               <Button 
                 size="sm"
                 onClick={() => {
                   setIsOpen(false);
-                  window.open("https://ernst-3kn785vq.scoreapp.com/", "_blank");
+                  window.open("https://app.scoreapp.com/st/ZnJhbWV3b3JrfHx8fHx8aHR0cHM6Ly9tb3JmZXVzLXNpdGUubG92YWJsZS5hcHA=", "_blank");
                 }}
                 className="w-full"
               >
-                Free Assessment
+                Request Assessment
               </Button>
             </div>
           </div>
