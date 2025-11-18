@@ -7,7 +7,7 @@ const TeamSection = () => {
       name: "Sophia",
       role: "Azure Fabric Analytics Engineer",
       specialization: "Azure Fabric, Databricks, performance tuning",
-      notableWork: "UCQ Healthcare $1.9M value in 2 weeks",
+      notableWork: "Major healthcare client engagement",
     },
     {
       name: "Marcus",

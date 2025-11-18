@@ -10,7 +10,7 @@ const BenefitsGrid = () => {
       traditional: "12-18 months",
       agentic: "3-6 months",
       why: "AI agents work 24/7, analyze 100% of data",
-      example: "UCQ Healthcare: 2 weeks vs. 3-month quote (7.5x faster)",
+      example: "Client example: 2 weeks vs. 3-month quote (faster delivery)",
     },
     {
       icon: DollarSign,
@@ -37,7 +37,7 @@ const BenefitsGrid = () => {
       traditional: "<10% sample-based",
       agentic: "100% comprehensive",
       why: "AI can process entire datasets",
-      example: "UCQ: Analyzed all 500+ tables, not samples",
+      example: "Client: Analyzed all XXX+ tables, not samples",
     },
     {
       icon: TrendingUp,

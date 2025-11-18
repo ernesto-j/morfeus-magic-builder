@@ -10,13 +10,13 @@ const PremiumBlueprints = () => {
       pillars: [
         "Data Foundation (Medallion architecture)",
         "Platform Infrastructure (Terraform/Bicep IaC)",
-        "Agent Orchestration (BMAD, Archon MCP)",
+        "Agent Orchestration (Proprietary Framework, Archon MCP)",
         "Observability (Prometheus + Grafana + Loki)",
         "Governance (Policy-as-code, RBAC)",
       ],
     },
     {
-      title: "BMAD Orchestrator",
+      title: "Agent Orchestrator",
       tagline: "12+ Specialized AI Agents. Orchestrated.",
       price: "$50K one-time license",
       pillars: [
