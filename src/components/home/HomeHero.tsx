@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import StatsRow from "@/components/shared/StatsRow";
+import { useTypewriter } from "@/hooks/use-typewriter";
 
 const HomeHero = () => {
   const stats = [
@@ -7,6 +8,17 @@ const HomeHero = () => {
     { value: "60%", label: "Cost savings" },
     { value: "100%", label: "Knowledge retention" },
   ];
+
+  const { displayText } = useTypewriter({
+    phrases: [
+      "Powered by AI.",
+      "Built for Scale.",
+      "Delivered in Months.",
+    ],
+    typingSpeed: 80,
+    deletingSpeed: 50,
+    pauseDuration: 2500,
+  });
 
   const handlePrimaryClick = () => {
     window.open("https://ernst-3kn785vq.scoreapp.com/", "_blank");
@@ -20,7 +32,8 @@ const HomeHero = () => {
         <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
           Resilient Enterprise Systems.{" "}
           <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Powered by AI.
+            {displayText}
+            <span className="animate-pulse">|</span>
           </span>
         </h1>
         
