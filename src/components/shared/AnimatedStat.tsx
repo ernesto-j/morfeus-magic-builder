@@ -16,6 +16,8 @@ const AnimatedStat = ({ value, suffix = "", label, duration = 2, className = "" 
 
   const numericValue = parseFloat(value.replace(/[^0-9.]/g, ""));
   const hasDecimal = value.includes(".");
+  const extractedSuffix = value.replace(/[0-9.]/g, "").trim();
+  const displaySuffix = suffix || extractedSuffix;
 
   return (
     <motion.div 
@@ -34,7 +36,7 @@ const AnimatedStat = ({ value, suffix = "", label, duration = 2, className = "" 
               decimals={hasDecimal ? 1 : 0}
               preserveValue
             />
-            {suffix}
+            {displaySuffix}
           </>
         )}
       </div>
