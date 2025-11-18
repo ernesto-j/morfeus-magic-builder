@@ -1,3 +1,4 @@
+import Navigation from "@/components/shared/Navigation";
 import HeroSection from "@/components/HeroSection";
 import TeamsSection from "@/components/TeamsSection";
 import CodeSection from "@/components/CodeSection";
@@ -9,6 +10,7 @@ import CTASection from "@/components/CTASection";
 const MorfeusFramework = () => {
   return (
     <main className="min-h-screen bg-background">
+      <Navigation />
       <HeroSection />
       <TeamsSection />
       <CodeSection />

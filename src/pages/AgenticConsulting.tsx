@@ -1,3 +1,4 @@
+import Navigation from "@/components/shared/Navigation";
 import PageHero from "@/components/shared/PageHero";
 import ProblemSection from "@/components/agentic/ProblemSection";
 import TenEightyTenSection from "@/components/agentic/TenEightyTenSection";
@@ -7,6 +8,7 @@ import AgenticCaseStudies from "@/components/agentic/AgenticCaseStudies";
 const AgenticConsulting = () => {
   return (
     <main className="min-h-screen bg-background">
+      <Navigation />
       <PageHero
         title="Agentic Consulting. The Future is 10-80-10."
         description="What if consultants could deliver 3x faster, at 40% the cost, with knowledge that never walks out the door?"

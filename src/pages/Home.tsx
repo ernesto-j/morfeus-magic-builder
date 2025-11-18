@@ -1,3 +1,4 @@
+import Navigation from "@/components/shared/Navigation";
 import HomeHero from "@/components/home/HomeHero";
 import ProblemStatement from "@/components/home/ProblemStatement";
 import DomainHub from "@/components/home/DomainHub";
@@ -10,6 +11,7 @@ import FinalCTAs from "@/components/home/FinalCTAs";
 const Home = () => {
   return (
     <main className="min-h-screen bg-background">
+      <Navigation />
       <HomeHero />
       <ProblemStatement />
       <DomainHub />
